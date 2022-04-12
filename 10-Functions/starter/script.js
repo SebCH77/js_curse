@@ -322,3 +322,28 @@ document
 
 // [5, 2, 3]
 // [1, 5, 3, 9, 6, 1]
+
+///////////////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23; //Todos los datos definidos dentro de un alcance son privados. (Datos encapsulados).
+})();
+
+// console.log(isPrivate);
+
+(() => console.log('This will ALSO never run again'))();
+
+//Bloque:
+{
+  const isPrivate = 23; //No es accesible por fuera.
+  var notPrivate = 46; //Sera accesible por fuera del bloque, ya que es global.
+}
+// console.log(isPrivate);
+console.log(notPrivate);
