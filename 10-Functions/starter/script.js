@@ -370,34 +370,34 @@ document
 ///////////////////////////////////////
 // More Closure Examples
 // Example 1
-let f;
+// let f;
 
-const g = function () {
-  const a = 23;
-  f = function () {
-    console.log(a * 2);
-  };
-};
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
 
-const h = function () {
-  const b = 777;
-  f = function () {
-    console.log(b * 2);
-  };
-};
+// const h = function () {
+//   const b = 777;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
 
-g();
-f();
-console.dir(f);
+// g();
+// f();
+// console.dir(f);
 
 // Re-assigning f function
-h();
-f();
-console.dir(f);
+// h();
+// f();
+// console.dir(f);
 
 // Example 2
 // const boardPassengers = function (n, wait) {
-//   const perGroup = n / 3;
+//   // const perGroup = n / 3; //Tiene más propiedad que la que esta por fuera de la función.
 
 //   setTimeout(function () {
 //     console.log(`We are now boarding all ${n} passengers`);
@@ -423,13 +423,13 @@ And now explain to YOURSELF (or someone around you) WHY this worked! Take all th
 GOOD LUCK 😀
 */
 
-/*
-(function () {
-  const header = document.querySelector('h1');
-  header.style.color = 'red';
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
 
-  document.querySelector('body').addEventListener('click', function () {
-    header.style.color = 'blue';
-  });
-})();
-*/
+//   document.querySelector('body').addEventListener('click', function () {
+//     header.style.color = 'blue';
+//   });
+// })();
+
+//A pesar de que el entorno en el que se creó esta función ya desapareció, el callback del listener aun puede acceder a las variables que se crearon en el momento del nacimiento de la función padre.
