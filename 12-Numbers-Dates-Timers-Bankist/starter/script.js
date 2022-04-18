@@ -206,7 +206,7 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -289,4 +289,48 @@ console.log(Number.isFinite(23 / 0));
 console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.2));
 console.log(Number.isInteger(23 / 0));
+*/
+
+///////////////////////////////////////
+/*
+// Math and Rounding
+console.log(Math.sqrt(25));
+console.log(25 ** (1 / 2));
+console.log(8 ** (1 / 3));
+
+console.log(Math.max(5, 18, 23, 11, 2));
+console.log(Math.max(5, 18, '23', 11, 2)); //Tiene coerción
+console.log(Math.max(5, 18, '23px', 11, 2));
+
+console.log(Math.min(5, 18, 23, 11, 2));
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2); //Calcular el area de un circulo con 10px de radio.
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+const randomInt = (min, max) =>
+Math.floor(Math.random() * (max - min) + 1) + min;
+// 0...1 -> 0...(max - min) -> min...max
+// console.log(randomInt(10, 20));
+
+// Rounding integers
+console.log(Math.round(23.3)); //Redondeo al más cercano.
+console.log(Math.round(23.9));
+
+console.log(Math.ceil(23.3)); //Redondeo hacia arriba.
+console.log(Math.ceil(23.9));
+
+console.log(Math.floor(23.3)); //Redondeo hacia abajo.
+console.log(Math.floor('23.9'));
+
+console.log(Math.trunc(23.3));
+
+console.log(Math.trunc(-23.3));
+console.log(Math.floor(-23.3));
+
+// Rounding decimals
+console.log((2.7).toFixed(0)); //Devuelve siempre una cadena =>> OJO!!!
+console.log((2.7).toFixed(3)); //Param: Decimales a redondear!!!
+console.log((2.345).toFixed(2));
+console.log(+(2.345).toFixed(2));
 */
